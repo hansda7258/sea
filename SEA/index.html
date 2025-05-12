@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANTAL ENGINEERING ASSOCIATION </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #dadc41;
+        }
+        header {
+            text-align: center;
+            background: #036223;
+            color: #fff;
+            padding: 8px 8px;
+            line-height: 1;
+        }
+
+        
+        
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        /* Removed misplaced <header> tag */
+        nav {
+            position: absolute; /* Position nav absolutely */
+           
+            width: 100%; /* Full width */
+            text-align: left;
+            z-index: 10; /* Ensure it appears above the slider */
+            background: transparent; /* Semi-transparent background */
+            
+            
+            font-size: 50px;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Space between links and date/time */
+            align-items: center; /* Vertically align items */
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0px 25px;
+            color: #08380e; /* Text color */
+            font-size: 14px;
+            text-shadow: 5px 5px 8px #097b38; /* Add stroke effect */
+            border: 2px solid #08380e; /* Add border around each item */
+            padding: 5px 10px; /* Add padding inside the border */
+            border-radius: 8px; /* Optional: Add rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+        }
+
+        nav a:hover {
+            background-color: #08380e; /* Change background on hover */
+            color: #fff; /* Change text color on hover */
+        }
+        #datetime {
+            margin-right: 80px; /* Add spacing from the right edge */
+            color: #08380e; /* Match the color of nav links */
+            font-size: 20px;
+            text-shadow: 5px 5px 8px #097b38; /* Add stroke effect */
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            height: 550px;
+            overflow: hidden;
+            transition: 0.5s;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .slides img {
+            width: 100%;
+            height: 550px;
+            display: none;
+            object-fit: cover;
+        }
+        .slides img.active {
+            display: block;
+        }
+        .section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .news, .events {
+            width: 45%;
+        }
+        .news h2, .events h2 {
+            border-bottom: 2px solid crimson;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #036223;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center; justify-content: center; ">
+        <img src="1.png" alt="" height="100px" width="100px" style="margin-right: 15px; margin-top: -10px;">
+        <div>
+            <h1>SANTHAL ENGINEERING ASSOCIATION</h1>
+            <h2>For Welfare and Empowerment</h2>
+        </div>
+    
+    </div>
+    
+    
+</header>
+
+
+<nav>
+    <div style="margin-left: 100px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Gallary.html">Gallery</a>
+        <a href="#footer">Contacts</a>
+    </div>
+    <div id="datetime"></div>
+</nav>
+
+<div id="home" class="slider">
+    <div class="slides">
+        <img src="baha.jpg" class="active" alt="Slide 1">
+        <img src="sohray.jpeg" alt="Slide 2">
+        <img src="sohray2.webp" alt="Slide 3">
+    </div>
+</div>
+
+<section id="about" class="section">
+    <div class="news">
+        <h2>About</h2>
+        <div class="item">
+            <details>
+                <summary>Annual Cultural Fest</summary>
+                <p>Join us for a day of fun, food, and festivities!</p>
+                <p>Date: 15th March 2025</p>
+            </details>
+        </div>
+    </div>
+    <div class="events">
+        <h2>Upcoming Events</h2>
+        <div class="item">
+            <h3>Annual Engineering Meetup</h3>
+            <p>Join us for networking and discussions on modern engineering trends.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733614.png" alt="Instagram"></a>
+    </div>
+    <p> Mail us at: johartudu7258@gmail.com <br>
+        &copy; 2025 SANTAL ENGINEERING. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides img');
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if(index === slideIndex) {
+                slide.classList.add('active');
+            }
+        });
+        slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    setInterval(showSlides, 3000);
+</script>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const formattedDateTime = now.toLocaleString(); // Format date and time
+        document.getElementById('datetime').textContent = formattedDateTime;
+    }
+
+    // Update the date and time every second
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // Initial call to display immediately
+</script>
+
+</body>
+</html>

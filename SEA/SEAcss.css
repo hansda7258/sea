@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slideshow {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content {
+    width: 400px;
+    margin-left: 20px;
+}
+
+.articles, .events {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 2px 2px 10px gray;
+}
